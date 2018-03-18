@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>Forestify</title>
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+
+  <!-- CDN Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.rawgit.com/creativetimofficial/paper-kit/bootstrap4-development/assets/css/paper-kit.css" rel="stylesheet" />
+
+  <!--     Fonts and icons     -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdn.rawgit.com/creativetimofficial/paper-kit/bootstrap4-development/assets/css/nucleo-icons.css" rel="stylesheet" />
+
+  <!-- Google Material Design Icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Eksternal CSS -->
+  <link rel="stylesheet" href="/css/master.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-md fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+      <div class="navbar-translate">
+        <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar"></span>
+                    <span class="navbar-toggler-bar"></span>
+                    <span class="navbar-toggler-bar"></span>
+                </button>
+        <a class="navbar-brand" href="#">
+          <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDM4NCAzODQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM4NCAzODQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzA5LjQ1NiwyODIuMTA0bC0zNi42NTYtNTcuMDRoOC4wNTZjNS44ODgsMCwxMS4zMTItMy4yNCwxNC4wOTYtOC40MzJjMi43ODQtNS4xOTIsMi40OTYtMTEuNDk2LTAuNzYtMTYuNDA4ICAgIGwtNDIuNTg0LTY0LjI3MmgzLjYyNGM1Ljc4NCwwLDExLjExMi0zLjEyLDEzLjk0NC04LjE2YzIuODMyLTUuMDQsMi43MjgtMTEuMjE2LTAuMjgtMTYuMTUyTDIwNS42NjQsNy42OCAgICBDMjAyLjc2OCwyLjkxMiwxOTcuNTg0LDAsMTkyLDBjLTUuNTg0LDAtMTAuNzY4LDIuOTEyLTEzLjY2NCw3LjY4bC02My4yNCwxMDMuOTZjLTMuMDA4LDQuOTQ0LTMuMTEyLDExLjEyLTAuMjgsMTYuMTUyICAgIGMyLjgzMiw1LjA0LDguMTY4LDguMTYsMTMuOTQ0LDguMTZoMy42NGwtNDIuNTc2LDY0LjI3MmMtMy4yNTYsNC45MTItMy41NDQsMTEuMjE2LTAuNzUyLDE2LjQwOCAgICBjMi43ODQsNS4xOTIsOC4yLDguNDMyLDE0LjA5Niw4LjQzMmg4LjAzMmwtMzYuNjY0LDU3LjA0Yy0zLjE2LDQuOTI4LTMuMzg0LDExLjE5Mi0wLjU3NiwxNi4zMjggICAgYzIuODA4LDUuMTM2LDguMTkyLDguMzM2LDE0LjA0LDguMzM2aDg4VjM2OGMwLDguODMyLDcuMTY4LDE2LDE2LDE2YzguODMyLDAsMTYtNy4xNjgsMTYtMTZ2LTYxLjI0aDg4ICAgIGM1Ljg0OCwwLDExLjI0LTMuMTkyLDE0LjA0LTguMzM2QzMxMi44NDgsMjkzLjI4OCwzMTIuNjI0LDI4Ny4wMzIsMzA5LjQ1NiwyODIuMTA0eiBNMTE3LjMwNCwyNzQuNzZsMzYuNjU2LTU3LjA0ICAgIGMzLjE2OC00LjkyLDMuMi0xMS4xNzYsMC4zOTItMTYuMzJjLTIuODA4LTUuMTM2LTguMzc2LTguMzM2LTE0LjIzMi04LjMzNmgtNy4xNzZMMTc1LjUyLDEyOC44ICAgIGMzLjI1Ni00LjkxMiwzLjU0NC0xMS4yMTYsMC43NTItMTYuNDA4Yy0yLjc4NC01LjE5Mi04LjItOC40MzItMTQuMDk2LTguNDMyaC00Ljk2OEwxOTIsNDYuNzkybDM0Ljc3Niw1Ny4xNjhoLTQuOTYgICAgYy01Ljg4OCwwLTExLjMxMiwzLjI0LTE0LjA5Niw4LjQzMmMtMi43ODQsNS4xOTItMi40OTYsMTEuNDk2LDAuNzYsMTYuNDA4bDQyLjU4NCw2NC4yNzJoLTcuMTg0Yy0wLjA0LDAtMC4wOCwwLTAuMTIsMCAgICBjLTMuMDQ4LDAuMDQtNi4xNTIsMC43NjgtOC45MTIsMi41MzZjLTcuNDQsNC43NzYtOS41OTIsMTQuNjcyLTQuODA4LDIyLjExMmwzNi42NTYsNTcuMDRIMTE3LjMwNHoiIGZpbGw9IiNlM2UxZTEiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                            <p class="d-lg-none">Twitter</p>
+                        </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                            <p class="d-lg-none">Facebook</p>
+                        </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                            <p class="d-lg-none">Instagram</p>
+                        </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://www.github.com/CreativeTimOfficial/paper-kit" target="_blank">
+                            <i class="fa fa-github"></i>
+                            <p class="d-lg-none">GitHub</p>
+                        </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Of Navigation Bar -->
+
+  <!-- Main Wrapper -->
+  <div class="wrapper">
+    <!-- Photo + Caption + Moving Cloud -->
+    <div class="page-header section-dark" style="background-image: url('ress/background.jpg')">
+      <div class="filter"></div>
+      <div class="content-center">
+        <div class="container">
+          <div class="title-brand">
+            <h1 id="logo" class="presentation-title">Travelify</h1>
+          </div>
+          <h2 class="presentation-subtitle text-center">Find your next destination and be free</h2>
+        </div>
+      </div>
+      <div class="moving-clouds" style="background-image: url('https://cdn.rawgit.com/creativetimofficial/paper-kit/bootstrap4-development/assets/img/clouds.png'); "></div>
+    </div>
+    <!-- End of Photo + Caption + Moving Cloud -->
+
+    <!-- Content Wrapper -->
+    <div class="main">
+      <!-- Section Container -->
+      <div class="section text-center">
+
+        <!-- Menu Tab panes-->
+        <div class="nav-tabs-navigation">
+          <div class="nav-tabs-wrapper">
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#forest" role="tab">Forest</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#lake" role="tab">Lake</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#beach" role="tab">Beach</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#mountain" role="tab">Mountain</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End Of Menu Tab Panes -->
+
+        <!-- Tab panes -->
+        <div class="tab-content text-center">
+
+          <!-- Forest Area -->
+          <div class="tab-pane active" id="forest" role="tabpanel">
+            <div class="forest-page flex">
+              <!-- Forest Cards -->
+
+              <!-- Card 1 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Arashiyama-Bamboo.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Arashiyama</h4>
+                </div>
+                <div class="description-container">
+                  <p>Landmark in Kyoto, Japan</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Amazon-Rainforest.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Amazon rainforest</h4>
+                </div>
+                <div class="description-container">
+                  <p>Forest in Brazil</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Kelp-Forest.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Kelp Forest</h4>
+                </div>
+                <div class="description-container">
+                  <p>Forest at the Monterey Bay Aquarium</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Sian-Coastal.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Sian Ka'an</h4>
+                </div>
+                <div class="description-container">
+                  <p>A biosphere reserve in the municipality of Tulum in the Mexican state of Quintana Roo</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Tandayapa-Cloud-Forest.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Tandayapa Cloud Forest</h4>
+                </div>
+                <div class="description-container">
+                  <p>700 hectares of the cloud forest </p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Bioalowi-Primeval.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Bialowieza Primeval Forest</h4>
+                </div>
+                <div class="description-container">
+                  <p>UNESCO World Heritage Site</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 7 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Boreal-Forest.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Boreal Forest</h4>
+                </div>
+                <div class="description-container">
+                  <p>The Winter Forest</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 8 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Congo-Basin.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Congo Basin Forest</h4>
+                </div>
+                <div class="description-container">
+                  <p>The planet's "second lung"</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 9 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Daintree.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Daintree Forest</h4>
+                </div>
+                <div class="description-container">
+                  <p>The greatest number of rare flora of all the beautifull forest in the world</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 10 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Sumatra-Rainforest.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Sumatra Rainforest</h4>
+                </div>
+                <div class="description-container">
+                  <p>House of many rare and endangered species</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 11 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Valdivian-Rainforest.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Valdivian Forest</h4>
+                </div>
+                <div class="description-container">
+                  <p>Temperate rainforest in the southern part of South America</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 12 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/forest/Humboldt-Redwood.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Humboldt Redwoods</h4>
+                </div>
+                <div class="description-container">
+                  <p>Three of the world’s ten tallest trees</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Lake Section -->
+          <div class="tab-pane" id="lake" role="tabpanel">
+            <div class="lake-page flex">
+              <!-- Lake Cards -->
+
+              <!-- Card 1 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/lake/Dead-Sea.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Dead Sea</h4>
+                </div>
+                <div class="description-container">
+                  <p>A higher concentration of salt and minerals than any ordinary lakes in the world.</p>
+                </div>
+                <div class="button-container flex">
+                  <button id="place" type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/lake/Berryessa-Glory-Hole.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Berryessa Glory Hole</h4>
+                </div>
+                <div class="description-container">
+                  <p>A Lake that generates hydroelectricity</p>
+                </div>
+                <div class="button-container flex">
+                  <button id="place" type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/lake/Crater-Lake-Oregon.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Crater Lake Oregon</h4>
+                </div>
+                <div class="description-container">
+                  <p>The deepest lake in the United States and 7th or 9th deepest lake in the world</p>
+                </div>
+                <div class="button-container flex">
+                  <button id="place" type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/lake/Lake-Baikal.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Lake Baikal</h4>
+                </div>
+                <div class="description-container">
+                  <p>The oldest or most ancient lake in the geological history.</p>
+                </div>
+                <div class="button-container flex">
+                  <button id="place" type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/lake/Abraham-Lake.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Abraham Lake</h4>
+                </div>
+                <div class="description-container">
+                  <p>The Frozen bubles lake.</p>
+                </div>
+                <div class="button-container flex">
+                  <button id="place" type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/lake/Green-Lake.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Green Lake</h4>
+                </div>
+                <div class="description-container">
+                  <p>Transforming Lake.</p>
+                </div>
+                <div class="button-container flex">
+                  <button id="place" type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 7 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/lake/Taal-Lake.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Taal Lake</h4>
+                </div>
+                <div class="description-container">
+                  <p>The most photographed lake.</p>
+                </div>
+                <div class="button-container flex">
+                  <button id="place" type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 8 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/lake/Five-Flower-Lake.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Five Flower Lake</h4>
+                </div>
+                <div class="description-container">
+                  <p>The ancient trunks of trees lake.</p>
+                </div>
+                <div class="button-container flex">
+                  <button id="place" type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 9 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/lake/Spotted-Lake.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Spotted Lake</h4>
+                </div>
+                <div class="description-container">
+                  <p>The multi-colored spots.</p>
+                </div>
+                <div class="button-container flex">
+                  <button id="place" type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 10 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/lake/Lake-Hilier.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Hillier Lake</h4>
+                </div>
+                <div class="description-container">
+                  <p>The pink lake.</p>
+                </div>
+                <div class="button-container flex">
+                  <button id="place" type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Beach Section -->
+          <div class="tab-pane" id="beach" role="tabpanel">
+            <div class="beach-page flex">
+              <!-- Beach Cards -->
+
+              <!-- Card 1 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Tikehau-Island.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Tikehau Island</h4>
+                </div>
+                <div class="description-container">
+                  <p>A White-Pink sand beach</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Dreamland-Beach.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Dreamland Beach</h4>
+                </div>
+                <div class="description-container">
+                  <p>Great Shore Breaks Beach</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Bathsheba-Beach.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Bathsheba Beach</h4>
+                </div>
+                <div class="description-container">
+                  <p>Rugged, wild, and untouched Beach</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Seven-Mile-Beach.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Seven Mile Beach</h4>
+                </div>
+                <div class="description-container">
+                  <p>7 mile-long of public property beach</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Horseshoe-Bay.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Horseshoe Bay</h4>
+                </div>
+                <div class="description-container">
+                  <p>Most popular beaches on the Bermuda island</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Harbour-Island.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Harbour Island</h4>
+                </div>
+                <div class="description-container">
+                  <p>Pink sands Beach On Bahamas</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Blue-Beach.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Blue Beach (La Chiva)</h4>
+                </div>
+                <div class="description-container">
+                  <p>Perfect sand and clear water in a thousand shades of blue</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 7 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Trunk-Bay.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Trunk Bay</h4>
+                </div>
+                <div class="description-container">
+                  <p>The most photographed beaches in the Caribbean</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 8 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Waipio-Valley-Beach.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Waipio Valley Beach</h4>
+                </div>
+                <div class="description-container">
+                  <p>A mile-long black volcanic sand beach bordered by 2000-foot cliff walls</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 8 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Waipio-Valley-Beach.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Waipio Valley Beach</h4>
+                </div>
+                <div class="description-container">
+                  <p>A mile-long black volcanic sand beach bordered by 2000-foot cliff walls</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 9 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Parrot-Cay.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Parrot Cay</h4>
+                </div>
+                <div class="description-container">
+                  <p>1000-acre private island</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 10 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/beach/Sunset-Beach.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Sunset Beach</h4>
+                </div>
+                <div class="description-container">
+                  <p>World's best places to watch big wave sufring in water</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Mountain Section -->
+          <div class="tab-pane" id="mountain" role="tabpanel">
+            <div class="mountain-page flex">
+              <!-- Mountain Cards -->
+
+              <!-- Card 1 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/mountain/Kinabalu.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Kinabalu Mountain</h4>
+                </div>
+                <div class="description-container">
+                  <p>The highest mountain in Borneo</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/mountain/Amphitheatre.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Amphitheatre Mountain</h4>
+                </div>
+                <div class="description-container">
+                  <p>One of the most impressive cliff faces on earth</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/mountain/Huang.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Huang Mountain</h4>
+                </div>
+                <div class="description-container">
+                  <p>Best Scenery, sunsets, peculiarly-shaped granite peaks, and views of the clouds</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/mountain/Aoraki.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Aoraki Mountain</h4>
+                </div>
+                <div class="description-container">
+                  <p>The highest mountain in New Zealand, and a favorite destination for montain climbers</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/mountain/Monte-Fitz-Roy.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Monte Fitz Roy Mountain</h4>
+                </div>
+                <div class="description-container">
+                  <p>The challenging mountain to climb between Argentina and Chile</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/mountain/Kailash.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Kailash Mountain</h4>
+                </div>
+                <div class="description-container">
+                  <p>Sacred place in 5 religions mountain</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 7 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/mountain/Banff.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Mountain of Banff</h4>
+                </div>
+                <div class="description-container">
+                  <p>One North America's most visited national parks</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 8 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/mountain/K2.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>K2 Mountain</h4>
+                </div>
+                <div class="description-container">
+                  <p>Second-heighest mountain on Earth</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 9 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/mountain/Table.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Table Mountain</h4>
+                </div>
+                <div class="description-container">
+                  <p>A flat-topped mountain overlooking the city of Cape Town in South Africa</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+              <!-- Card 10 -->
+              <div class="content-card flex">
+                <div class="image-container">
+                  <img src="ress/mountain/Everest.jpg" alt="">
+                </div>
+                <div class="title-container">
+                  <h4>Everest Mountain</h4>
+                </div>
+                <div class="description-container">
+                  <p>Of course you know why</p>
+                </div>
+                <div class="button-container flex">
+                  <button type="button" class="btn btn-neutral" data-toggle="modal" data-target="#myModal">What is this ?</button>
+                  <button id="place" type="button" class="btn btn-neutral" onclick="">Where ?</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- End Tab panes -->
+
+      </div>
+      <!-- End Of Section Container -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <nav class="footer-nav">
+            <ul>
+              <li><a href="https://www.creative-tim.com" target="_blank">Creative Tim</a></li>
+              <li><a href="https://blog.creative-tim.com" target="_blank">Blog</a></li>
+              <li><a href="https://www.creative-tim.com/license" target="_blank">Licenses</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Loorem Ipsum</h5>
+          </div>
+          <div class="modal-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. lorem
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-link" data-dismiss="modal">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Model End -->
+
+  </div>
+  <!-- End of Main Wrapper -->
+
+</body>
+
+<!-- Core JS Files -->
+<script src="https://cdn.rawgit.com/creativetimofficial/paper-kit/bootstrap4-development/assets/js/jquery-3.2.1.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.rawgit.com/creativetimofficial/paper-kit/bootstrap4-development/assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- Switches -->
+<script src="https://cdn.rawgit.com/creativetimofficial/paper-kit/bootstrap4-development/assets/js/bootstrap-switch.min.js"></script>
+
+<!--  Plugins for Slider -->
+<script src="https://cdn.rawgit.com/creativetimofficial/paper-kit/bootstrap4-development/assets/js/nouislider.js"></script>
+
+<!--  Plugins for DateTimePicker -->
+<script src="https://cdn.rawgit.com/creativetimofficial/paper-kit/bootstrap4-development/assets/js/moment.min.js"></script>
+<script src="https://cdn.rawgit.com/creativetimofficial/paper-kit/bootstrap4-development/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+<!--  Paper Kit Initialization and functons -->
+<script src="https://cdn.rawgit.com/creativetimofficial/paper-kit/bootstrap4-development/assets/js/paper-kit.js"></script>
+
+</html>
