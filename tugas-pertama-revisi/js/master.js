@@ -11,7 +11,6 @@ whiteLogo.setAttribute('src','data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0
 whiteLogo.setAttribute('id','logo-white');
 
 function scrolling() {
-  console.log(window.scrollY);
   "use strict";
   if (window.scrollY >= 689 ) {
     for (let i = 0; i < myIcon.length; i++) {
@@ -38,6 +37,62 @@ function scrolling() {
     if(child != null){
       parent.removeChild(child);
       parent.appendChild(whiteLogo);
+    }
+  }
+}
+
+function findAPlace(id){
+  temp = id.split("-");
+  type = temp[0];
+  identifier = Number(temp[2]);
+  switch (type) {
+    case "f":{
+      console.log("WHERE Find Forest Number : ",identifier);
+      break;
+    }
+    case "l":{
+      console.log("WHERE Find Lake Number : ",identifier);
+      break;
+    }
+    case "m":{
+      console.log("WHERE Find Mountain Number : ",identifier);
+      break;
+    }
+    case "b":{
+      console.log("WHERE Find Beach Number : ",identifier);
+      break;
+    }
+    default:{
+      console.log("WHERE Not Found");
+      break;
+    }
+  }
+}
+
+function findADescription(id){
+  temp = id.split("-");
+  type = temp[0];
+  identifier = Number(temp[2]);
+  switch (type) {
+    case "f":{
+      console.log("WHAT Find Forest Number : ",identifier);
+      break;
+    }
+    case "l":{
+      console.log("WHAT Find Lake Number : ",identifier);
+      break;
+    }
+    case "m":{
+      console.log("WHAT Find Mountain Number : ",identifier);
+      break;
+    }
+    case "b":{
+      console.log("WHAT Find Beach Number : ",identifier);
+      break;
+    }
+    default:{
+      console.log("WHAT Not Found");
+      break;
     }
   }
 }
