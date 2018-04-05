@@ -1,0 +1,47 @@
+https://www.insidekyoto.com/arashiyama					forest-1
+https://rainforests.mongabay.com/amazon/				forest-2
+http://oceana.org/marine-life/marine-science-and-ecosystems/kelp-forest	forest-3
+http://www.visitsiankaan.com/						forest-4
+https://en.wikipedia.org/wiki/Bellavista_Cloud_Forest_Reserve		forest-5
+https://en.wikipedia.org/wiki/Białowieża_Forest				forest-6
+https://en.wikipedia.org/wiki/Boreal_forest_of_Canada			forest-7
+https://globalforestatlas.yale.edu/region/congo				forest-8
+https://daintreerainforest.net.au					forest-9
+https://whc.unesco.org/en/list/1167					forest-10
+https://en.wikipedia.org/wiki/Valdivian_temperate_rain_forest		forest-11
+
+
+https://en.wikipedia.org/wiki/Dead_Sea					lake-1
+https://en.wikipedia.org/wiki/Lake_Berryessa				lake-2
+https://en.wikipedia.org/wiki/Crater_Lake				lake-3
+https://en.wikipedia.org/wiki/Lake_Baikal				lake-4
+https://en.wikipedia.org/wiki/Abraham_Lake				lake-5
+https://en.wikipedia.org/wiki/Green_Lake_(Seattle)			lake-6
+https://en.wikipedia.org/wiki/Taal_Lake					lake-7
+https://en.wikipedia.org/wiki/Jiuzhaigou				lake-8
+https://en.wikipedia.org/wiki/Spotted_Lake				lake-9
+https://en.wikipedia.org/wiki/Lake_Hillier				lake-10
+
+
+https://www.tikehaupearlbeachresort.com/en/				beach-1
+https://en.wikipedia.org/wiki/Dreamland_Beach				beach-2
+https://en.wikipedia.org/wiki/Bathsheba,_Barbados			beach-3
+http://www.caymanislands.ky/activities/beaches/sevenmilebeach.aspx	beach-4
+https://en.wikipedia.org/wiki/Horseshoe_Bay,_Queensland			beach-5
+https://en.wikipedia.org/wiki/Harbour_Island,_Bahamas			beach-6
+https://www.tripadvisor.com/LocationPhotoDirectLink-g147326-d1819723-i96836221-La_Chiva-Isla_de_Vieques_Puerto_Rico.html	beach-7
+https://www.tripadvisor.com/Attraction_Review-g147411-d147590-Reviews-Trunk_Bay-Virgin_Islands_National_Park_St_John_U_S_Virgin_Islands.html	beach-8
+http://www.best-big-island-hawaii.com/waipio-valley.html		beach-9
+http://parrotcay.com/beach-villas/					beach-10
+https://en.wikipedia.org/wiki/Sunset_Beach,_California			beach-11
+
+https://www.mountkinabalu.com						mountain-1
+https://en.wikipedia.org/wiki/Amphitheatre_(Drakensberg)		mountain-2
+https://en.wikipedia.org/wiki/Huangshan					mountain-3
+https://en.wikipedia.org/wiki/Aoraki_/_Mount_Cook			mountain-4
+https://en.wikipedia.org/wiki/Fitz_Roy					mountain-5
+https://en.wikipedia.org/wiki/Mount_Kailash				mountain-6
+https://en.wikipedia.org/wiki/Banff,_Alberta				mountain-7
+https://en.wikipedia.org/wiki/K2					mountain-8
+http://www.tablemountain.net						mountain-9
+https://en.wikipedia.org/wiki/Mount_Everest				mountain-10
